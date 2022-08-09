@@ -13,9 +13,10 @@ const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
-    children: [{ path: ':id', component: UserDetailsComponent }],
+    children: [],
     resolve: [DataResolverService],
   },
+  { path: 'users/:id', component: UserDetailsComponent }
 ];
 
 @NgModule({

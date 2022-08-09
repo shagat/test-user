@@ -1,21 +1,21 @@
 <li [@list1]>
-  <div style="border: 1px solid red">
-    <a [routerLink]="[index]">
-      <h5 class="list-item-name">{{ user.first_name }}</h5>
-      <span class="pull-right">
+  <div class="list-group">
+    <a [routerLink]="[index]" class="list-item">
+      <h3 class="listName">{{ user.first_name }}</h3>
+      <!-- <span class="pull-right">
         <img
           [src]="user.avatar"
           alt="{{ user.first_name }}"
           class="img-avatar"
           style="max-height: 50px"
         />
-      </span>
+      </span> -->
     </a>
   </div>
 </li>
-<form formGroup="userForm" (ngSubmit)="onSubmit()">
+<!-- <form formGroup="userForm" (ngSubmit)="onSubmit()">
   <label for="user"> List of Users:</label>
   <select name="user" id="user">
     <option>somehitng</option>
   </select>
-</form>
+</form> -->

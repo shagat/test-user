@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DataService } from 'src/app/shared/data-service';
+
 import { User } from '../user.model';
 import { UsersService } from '../users-service';
 
@@ -8,22 +8,24 @@ import { UsersService } from '../users-service';
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
-
 })
 export class UserListComponent implements OnInit {
-users: User[] = [];
-isCollapsed: boolean = true;
-userDataSub = new Subscription;
-  constructor(private dataService: DataService, private usersService: UsersService) { }
+  users: User[] = [];
+  isCollapsed: boolean = true;
+  userDataSub = new Subscription();
+  constructor(
+    private usersService: UsersService
+  ) {}
 
   ngOnInit(): void {
     this.users = this.usersService.getUsers();
-    this.userDataSub = this.usersService.userUpdate.subscribe((users: User[]) => {
-      console.log(users);
-      this.users = users;
-    })
+    this.userDataSub = this.usersService.userUpdate.subscribe(
+      (users: User[]) => {
+        this.users = users;
+      }
+    );
   }
-  onCollapsed(){
+  onCollapsed() {
     this.isCollapsed = !this.isCollapsed;
   }
 }

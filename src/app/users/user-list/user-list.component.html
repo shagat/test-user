@@ -1,12 +1,19 @@
-<button (click)="onCollapsed()">
-  <h4 >List of Users</h4>
-</button>
-<div style="display: flex" *ngIf="!isCollapsed">
-  <ul>
-    <app-user-item
-      *ngFor="let user of users"
-      [user]="user"
-      [index]="user.id"
-    ></app-user-item>
-  </ul>
+<div class="container">
+  <h3>List of Users</h3>
+  <button class="btn" (click)="onCollapsed()">
+    <img
+      class="arrow-down"
+      src="../../../assets/angle-down-solid.svg"
+      alt="arrow-down"
+    />
+  </button>
+  <div *ngIf="!isCollapsed">
+    <ul>
+      <app-user-item
+        *ngFor="let user of users"
+        [user]="user"
+        [index]="user.id"
+      ></app-user-item>
+    </ul>
+  </div>
 </div>

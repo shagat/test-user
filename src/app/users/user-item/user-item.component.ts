@@ -1,6 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { User } from '../user.model';
 
 @Component({
@@ -18,11 +17,11 @@ import { User } from '../user.model';
           opacity: 0,
           transform: 'translateY(-100px)'
         }),
-        animate(300)
+        animate(400)
       ]),
       transition('* => void', [
         animate(300, style({
-          transform: 'translateY(100px)',
+          transform: 'translateY(100)',
           opacity: 0
         }))
       ])
@@ -36,9 +35,6 @@ export class UserItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-  onSubmit(){
-    console.log()
   }
 
 }

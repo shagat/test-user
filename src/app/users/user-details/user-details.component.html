@@ -1,1 +1,25 @@
-<p>user-details works!</p>
+<div class="container">
+  <button class="btn-back" (click)="onBack()">Go Back</button>
+  <hr>
+  <img
+    [src]="user.avatar"
+    alt="user.name"
+    style="border: 1px solid black; border-radius: 5px"
+  />
+  <div style="display: flex">
+    <p>User Id:</p>
+    <p class="userData">{{ user.id }}</p>
+  </div>
+  <div style="display: flex">
+    <p>First Name:</p>
+    <p class="userData">{{ user.first_name }}</p>
+  </div>
+  <div style="display: flex">
+    <p>Last Name:</p>
+    <p class="userData">{{ user.last_name }}</p>
+  </div>
+  <div style="display: flex">
+    <p>Email:</p>
+    <p class="userData">{{ user.email }}</p>
+  </div>
+</div>
