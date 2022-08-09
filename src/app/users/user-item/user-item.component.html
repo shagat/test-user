@@ -1,0 +1,15 @@
+<li>
+  <div style="border: 1px solid red;">
+    <a [routerLink]="[index]">
+      <h4 class="list-item-name">{{ user.first_name }}</h4>
+      <span class="pull-right">
+        <img
+          [src]="user.avatar"
+          alt="{{ user.first_name }}"
+          class="img-avatar"
+          style="max-height: 50px;"
+        />
+      </span>
+    </a>
+  </div>
+</li>
