@@ -2,3 +2,8 @@ img{
   height: 20px;
   width: 40px;
 }
+option{
+  /* display: block; */
+  background-color: aqua;
+  color: antiquewhite;
+}
