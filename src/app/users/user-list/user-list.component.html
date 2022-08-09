@@ -1,5 +1,7 @@
-<h4>List of Users</h4>
-<div style="display: flex">
+<button (click)="onCollapsed()">
+  <h4 >List of Users</h4>
+</button>
+<div style="display: flex" *ngIf="!isCollapsed">
   <ul>
     <app-user-item
       *ngFor="let user of users"

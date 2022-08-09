@@ -1,10 +1,33 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { User } from '../user.model';
 
 @Component({
   selector: 'app-user-item',
   templateUrl: './user-item.component.html',
-  styleUrls: ['./user-item.component.css']
+  styleUrls: ['./user-item.component.css'],
+  animations:[
+    trigger('list1', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateY(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateY(-100px)'
+        }),
+        animate(300)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateY(100px)',
+          opacity: 0
+        }))
+      ])
+    ])
+  ]
 })
 export class UserItemComponent implements OnInit {
   @Input() user!: User;
@@ -13,6 +36,9 @@ export class UserItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onSubmit(){
+    console.log()
   }
 
 }

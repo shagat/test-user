@@ -7,10 +7,12 @@ import { UsersService } from '../users-service';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css'],
+
 })
 export class UserListComponent implements OnInit {
 users: User[] = [];
+isCollapsed: boolean = true;
 userDataSub = new Subscription;
   constructor(private dataService: DataService, private usersService: UsersService) { }
 
@@ -20,5 +22,8 @@ userDataSub = new Subscription;
       console.log(users);
       this.users = users;
     })
+  }
+  onCollapsed(){
+    this.isCollapsed = !this.isCollapsed;
   }
 }
