@@ -31,9 +31,9 @@ export class UsersService {
 
   filterUsers(){
     const usr = this.users.filter((u) => {
-      u.first_name.startsWith("E");
-      console.log(u)
+      return u.first_name.startsWith("E");
     })
+    console.log(usr)
     this.userUpdate.next(usr);
   }
 
