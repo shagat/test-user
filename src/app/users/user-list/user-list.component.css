@@ -1,9 +1,9 @@
-img{
+img {
   height: 20px;
   width: 40px;
 }
-option{
-  /* display: block; */
+
+option {
   background-color: aqua;
   color: antiquewhite;
 }

@@ -28,15 +28,6 @@ import { User } from '../user.model';
         }),
         animate(400),
       ]),
-      transition('* => void', [
-        animate(
-          300,
-          style({
-            transform: 'translateY(100)',
-            opacity: 0,
-          })
-        ),
-      ]),
     ]),
   ],
 })
