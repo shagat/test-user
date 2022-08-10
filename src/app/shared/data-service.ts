@@ -18,32 +18,30 @@ export class DataService {
         return res['data'];
       }),
       tap((res) => {
-        this.userService.setUsers(res)
-      }),catchError(this.handleError)
+        this.userService.setUsers(res);
+      }),
+      catchError(this.handleError)
     );
   }
-  fetchUser(index:number) {
+
+  fetchUser(index: number) {
     return this.http.get<any>(this.web_api_single + index).pipe(
       map((res) => {
-        console.log(res)
         return res['data'];
       }),
-      tap((res) => {
-        console.log(res);
-
-      }),catchError(this.handleError)
+      catchError(this.handleError)
     );
   }
 
-  private handleError(errorRes: HttpErrorResponse){
-    let errorMsg = 'Unexpected error occured'
+  private handleError(errorRes: HttpErrorResponse) {
+    let errorMsg = 'Unexpected error occured';
     if (!errorRes.error || !errorRes.error.error) {
       return throwError(() => {
-        return(errorMsg);
-      })
+        return errorMsg;
+      });
     }
     return throwError(() => {
-      return (errorMsg);
-    })
+      return errorMsg;
+    });
   }
 }

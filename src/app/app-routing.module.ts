@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { DataResolverService } from './shared/data-resolver.service';
-import { UserDetailsComponent } from './users/user-details/user-details.component';
-import { UsersComponent } from './users/users.component';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -12,15 +10,16 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: UsersComponent,
-    children: [],
-    resolve: [DataResolverService],
+    loadChildren: () =>
+      import('./users/users.module').then((m) => m.UsersModule),
   },
-  { path: 'users/:id', component: UserDetailsComponent }
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

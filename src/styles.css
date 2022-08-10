@@ -8,7 +8,8 @@
 a {
   text-decoration: none;
 }
-li{
+
+li {
   list-style: none;
 }
 
@@ -18,9 +19,11 @@ li{
   padding: 5px;
   height: 70px;
 }
+
 .navbar a {
   color: aqua;
 }
+
 .navbar ul {
   display: flex;
   padding: 5px;
@@ -44,6 +47,7 @@ li{
   align-content: center;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .btn {
@@ -54,37 +58,43 @@ li{
   border: none;
   border-radius: 3px;
 }
-.userData{
-  color: cornflowerblue;
+
+.userData {
+  color: chocolate;
 }
-p{
+
+p {
   margin: 5px;
   padding: 5px;
   align-items: center;
   justify-items: center;
   font-weight: 400;
 }
-img{
+
+img {
   margin: 5px;
   padding: 2px;
   max-width: 160px;
 }
-.btn-back{
+
+.btn-back {
   position: absolute;
   right: 20vw;
-  top: 14vh;
-  color:violet;
+  top: 90px;
+  color: violet;
   border-radius: 5px;
-  background-color:springgreen;
+  background-color: springgreen;
   width: 100px;
   height: 40px;
 }
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
 }
-button{
+
+button {
   cursor: pointer;
 }

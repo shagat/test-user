@@ -19,7 +19,16 @@ export class UsersService {
   }
 
   setUsers(users: User[]) {
-    this.users = users;
+    this.users = this.sortArrayObj(users);
     this.userUpdate.next(this.users.slice());
+  }
+
+  sortArrayObj(users: User[]){
+    users.sort((a,b) => {
+      if(a.first_name.toLocaleLowerCase() < b.first_name.toLocaleLowerCase()) return -1;
+      if(a.first_name.toLocaleLowerCase() > b.first_name.toLocaleLowerCase()) return 1;
+      return 0;
+    })
+    return users;
   }
 }
