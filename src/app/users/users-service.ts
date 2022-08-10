@@ -18,9 +18,23 @@ export class UsersService {
     return this.users.slice();
   }
 
+  addUser(){
+    const u = new User(1,'something@something.com', 'dave', 'gt', 'test')
+    this.users.push(u);
+    this.userUpdate.next(this.users.slice());
+  }
+
   setUsers(users: User[]) {
     this.users = this.sortArrayObj(users);
     this.userUpdate.next(this.users.slice());
+  }
+
+  filterUsers(){
+    const usr = this.users.filter((u) => {
+      u.first_name.startsWith("E");
+      console.log(u)
+    })
+    this.userUpdate.next(usr);
   }
 
   sortArrayObj(users: User[]){

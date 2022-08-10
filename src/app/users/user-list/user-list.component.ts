@@ -28,6 +28,13 @@ export class UserListComponent implements OnInit, OnDestroy {
   onCollapsed() {
     this.isCollapsed = !this.isCollapsed;
   }
+onFilterUser(){
+  this.usersService.filterUsers()
+
+}
+  onAddUser(){
+    this.usersService.addUser();
+  }
   ngOnDestroy(): void {
     this.userDataSub.unsubscribe();
   }
