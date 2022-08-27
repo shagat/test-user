@@ -1,6 +1,7 @@
 img {
+  position: relative;
   height: 20px;
-  width: 40px;
+  width: 20px;
 }
 
 option {

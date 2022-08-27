@@ -1,13 +1,11 @@
-<div class="container">
-  <h3>List of Users</h3>
-  <app-user-search></app-user-search>
-  <button class="btn" (click)="onCollapsed()">
-    <img
-      class="arrow-down"
-      src="../../../assets/angle-down-solid.svg"
-      alt="arrow-down"
-    />
-  </button>
+<h3>List of Users</h3>
+<app-user-search></app-user-search>
+<button class="btn" (click)="onCollapsed()">
+  <img
+    class="arrow-down"
+    src="../../../assets/angle-down-solid.svg"
+    alt="arrow-down"
+  />
   <div *ngIf="!isCollapsed">
     <app-user-item
       *ngFor="let user of users"
@@ -15,4 +13,4 @@
       [index]="user.id"
     ></app-user-item>
   </div>
-</div>
+</button>
