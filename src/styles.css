@@ -9,6 +9,9 @@ a {
   text-decoration: none;
 }
 
+body {
+  font-family: "Silkscreen", cursive;
+}
 li {
   list-style: none;
 }
