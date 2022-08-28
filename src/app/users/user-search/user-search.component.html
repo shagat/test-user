@@ -1,11 +1,13 @@
-<div
-  class="
-"
->
+<div>
   <input
     type="text"
     id="search_input"
     placeholder="Search"
     [value]="searchQuery"
   />
+</div>
+<div>
+  <p #default>Default: {{ defaultText }}</p>
+  <p #debounce>Debounce:{{ debounceText }}</p>
+  <p #throttle>Throttle:{{ throttleText }}</p>
 </div>

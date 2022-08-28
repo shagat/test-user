@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-user-search',
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSearchComponent implements OnInit {
   searchQuery: string = '';
+  defaultText = 'default';
+  debounceText = 'debounce';
+  throttleText = 'throttle';
   constructor() {}
 
   ngOnInit(): void {}
