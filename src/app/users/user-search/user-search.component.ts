@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-user-search',
@@ -13,4 +13,7 @@ export class UserSearchComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  onChange(event: Event) {
+    console.log(event);
+  }
 }
