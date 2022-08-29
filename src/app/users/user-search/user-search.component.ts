@@ -17,8 +17,8 @@ export class UserSearchComponent implements OnInit {
   ngOnInit(): void {}
   onChange(e: any) {
     let timer: any;
+    clearTimeout(timer);
     timer = setTimeout(() => {
-      clearTimeout(timer);
       console.log(e.target.value);
       this.defaultText = e.target.value;
     }, 3000);
