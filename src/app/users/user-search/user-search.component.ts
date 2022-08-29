@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-user-search',
@@ -6,14 +7,18 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./user-search.component.css'],
 })
 export class UserSearchComponent implements OnInit {
-  searchQuery: string = '';
   defaultText = 'default';
   debounceText = 'debounce';
   throttleText = 'throttle';
+  q: any;
   constructor() {}
 
   ngOnInit(): void {}
-  onChange(event: Event) {
-    console.log(event);
+  onChange(event:string) {
+    let timer: any;
+    timer = setTimeout(() => {
+      console.log(event);
+      this.defaultText = 'hello';
+    }, 1000);
   }
 }

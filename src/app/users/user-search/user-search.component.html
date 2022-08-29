@@ -1,13 +1,14 @@
 <div>
-  <input (input)="onChange($event)"
+  <input
+    (input)="onChange($event.target)"
     type="text"
     id="search_input"
     placeholder="Search"
-    [value]="searchQuery"
+    #searchQuery
   />
 </div>
 <div>
-  <p #default>Default: {{ defaultText }}</p>
+  <p>Default: {{ defaultText }}</p>
   <p #debounce>Debounce:{{ debounceText }}</p>
   <p #throttle>Throttle:{{ throttleText }}</p>
 </div>
