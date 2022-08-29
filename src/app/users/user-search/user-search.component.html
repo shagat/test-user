@@ -1,10 +1,9 @@
 <div>
   <input
-    (input)="onChange($event.target)"
     type="text"
+    (keyup)="onChange($event)"
     id="search_input"
     placeholder="Search"
-    #searchQuery
   />
 </div>
 <div>

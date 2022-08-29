@@ -10,15 +10,17 @@ export class UserSearchComponent implements OnInit {
   defaultText = 'default';
   debounceText = 'debounce';
   throttleText = 'throttle';
-  q: any;
+  query: string = '';
+  // event!: string;
   constructor() {}
 
   ngOnInit(): void {}
-  onChange(event:string) {
+  onChange(e: any) {
     let timer: any;
     timer = setTimeout(() => {
-      console.log(event);
-      this.defaultText = 'hello';
-    }, 1000);
+      clearTimeout(timer);
+      console.log(e.target.value);
+      this.defaultText = e.target.value;
+    }, 3000);
   }
 }
