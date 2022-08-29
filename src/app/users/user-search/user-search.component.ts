@@ -12,19 +12,21 @@ export class UserSearchComponent implements OnInit {
   throttleText = 'throttle';
   query: string = '';
   timer: any;
+  // timer2: any;
   // event!: string;
   constructor() {}
 
   ngOnInit(): void {}
   onChange(e: any) {
     this.defaultText = e.target.value;
-    this.updateDebounceText(e.target.value)
+    this.updateDebounceText(e.target.value);
+    // this.updateThrottleText(e.target.value);
   }
 
-  updateDebounceText(text:string, delay=1000){
-    clearTimeout(this.timer)
+  updateDebounceText(text: string, delay = 1000) {
+    clearTimeout(this.timer);
     this.timer = setTimeout(() => {
       this.debounceText = text;
-    }, delay)  
+    }, delay);
   }
 }
